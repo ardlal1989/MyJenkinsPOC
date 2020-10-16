@@ -21,9 +21,13 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Permission') {
             steps {
                 chmod +x './jenkins/scripts/deliver.sh'
+            }
+        }
+        stage('Deliver') {
+            steps {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
